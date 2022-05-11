@@ -9,6 +9,47 @@
 
 // start header
 
+// burger
+
+.burger {
+    width: 24px;
+    height: 16px;
+    cursor: pointer;
+    transition: .3s;
+    display: none;
+    z-index: 10;
+}
+
+.bar1, .bar2, .bar3 {
+    background-color: $black;
+    height: 2px;
+    width: 24px;
+    margin: 0 auto;
+    transition: 0.7s;
+    border-radius: 3px;
+}
+
+.bar2 {
+    width: 24px;
+    margin: 5px auto;
+} 
+
+.burger.active {
+    transform: rotate(135deg);
+    .bar1 {
+        transform: rotate(90deg) translateX(7px);
+    }
+    .bar3 {
+        opacity: 0;
+    }
+    z-index: 10;
+}
+
+
+// end burger
+
+
+
 .header-top {
     background-color: $black;
     font-size: 12px;
@@ -16,7 +57,8 @@
     display: flex;
     justify-content: center;
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    transition: 0.3s;
     &__warning {
         color: #FF8D00;
         position: relative;
@@ -46,6 +88,10 @@
     }
 }
 
+.header-top.active {
+    display: none;
+}
+
 .logo {
     color: #000;
     font-family: 'Inter', sans-serif;
@@ -53,9 +99,10 @@
 }
 
 .header-bottom {
-    padding: 0 30px 0 162px;
+    padding: 20px 225px 0 360px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 40px;
 }
 
@@ -97,6 +144,14 @@
     top: 4px;
 }
 
+.header-menu__item-btn {
+    display: none;
+}
+
+.header-menu {
+    z-index: 10;
+}
+
 
 .header-menu__item {
     position: relative;
@@ -105,12 +160,17 @@
 .header-menu__item-links {
     position: absolute;
     display: none;
-    width: 100px;
+    width: 130px;
     background-color: #fff;
+    padding: 0 10px 10px 10px;
+    left: 0;
+    left: -10px;
+    border-radius: 5px;
     .header-menu__item-link {
         display: block;
-        margin-top: 10px;
+        margin-top: 15px;
         text-align: left;
+        color: $black;
     }
 }
 
@@ -311,6 +371,10 @@
     }
 }
 
+.posts-main__item-none {
+    display: none;
+}
+
 .posts-main__btn-wrapper {
     text-align: center;
     margin-top: 50px;
@@ -319,6 +383,8 @@
 .posts-main__btn {
     padding: 11px 80px;
     margin: 0;
+    cursor: pointer;
+    background-color: #fff;
 }
 
 
@@ -342,6 +408,7 @@
     text-align: center;
     margin-bottom: 32px;
     position: relative;
+    max-width: 340px;
 
     &::before {
         content: '';
@@ -365,6 +432,9 @@
             color: $black;
         }
     }
+}
+.posts-aside__search-form--min {
+    display: none;
 }
 
 .posts-aside__item {
